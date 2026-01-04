@@ -13,7 +13,6 @@ From Basic Computer Games (1978)
   Curtis Jr. High School in Sudbury, Massachusetts.
 """
 
-
 from random import random
 
 NUMBER_OF_ROUNDS = 9

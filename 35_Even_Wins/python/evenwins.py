@@ -16,7 +16,6 @@ would be to remove these infinite loops, and uses of continue, to follow a
 more structured style.
 """
 
-
 from dataclasses import dataclass
 from typing import Literal, Tuple
 

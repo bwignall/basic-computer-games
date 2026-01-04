@@ -429,10 +429,7 @@ def main() -> None:
             state.handle_too_many_deaths()
         if state.countrymen < 343:
             state.handle_third_died()
-        elif (
-            state.rallods > 500
-            and state.died_contrymen - state.pollution_deaths >= 2
-        ):
+        elif state.rallods > 500 and state.died_contrymen - state.pollution_deaths >= 2:
             state.handle_money_mismanagement()
         if state.foreign_workers > state.countrymen:
             state.handle_too_many_foreigners()

@@ -4,6 +4,7 @@ Bombs away
 Ported from BASIC to Python3 by Bernard Cooke (bernardcooke53)
 Tested with Python 3.8.10, formatted with Black and type checked with mypy.
 """
+
 import random
 from typing import Iterable
 

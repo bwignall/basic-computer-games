@@ -167,14 +167,9 @@ class Player:
         """
         if hide_dealer and self.player_type == PlayerType.Dealer:
             return "".join(f"{c.name}\t" for c in self.hand.cards[1::-1])
-        elif (
-            hide_dealer
-            and self.player_type == PlayerType.Player
-            or not hide_dealer
-        ):
+        elif hide_dealer and self.player_type == PlayerType.Player or not hide_dealer:
             s = "".join(
-                f"{cards_in_hand.name}\t"
-                for cards_in_hand in self.hand.cards[::-1]
+                f"{cards_in_hand.name}\t" for cards_in_hand in self.hand.cards[::-1]
             )
             s += f"total points = {self.hand.get_total()}"
             return s

@@ -102,10 +102,7 @@ def main() -> None:
                                 while True:  # 610
                                     X = random.randint(1, n)
                                     Y = random.randint(1, n)
-                                    if (
-                                        check_move(X, Y, n)
-                                        and board[X - 1][Y - 1] == 0
-                                    ):
+                                    if check_move(X, Y, n) and board[X - 1][Y - 1] == 0:
                                         board[X - 1][Y - 1] = 2
                                         print_board(board, n)
                                         break
@@ -116,10 +113,7 @@ def main() -> None:
                                 while True:
                                     X = random.randint(1, n)
                                     Y = random.randint(1, n)
-                                    if (
-                                        check_move(X, Y, n)
-                                        and board[X - 1][Y - 1] == 0
-                                    ):
+                                    if check_move(X, Y, n) and board[X - 1][Y - 1] == 0:
                                         board[X - 1][Y - 1] = 2
                                         print_board(board, n)
                                         break

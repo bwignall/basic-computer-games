@@ -221,7 +221,9 @@ def main() -> None:
                     print("NO ONE WILL BUY THEM.")
                     player_furs[FUR_FOX] = 0
                 else:
-                    print(f"Internal Error #3, Out-of-bounds event_picker{str(event_picker)}")
+                    print(
+                        f"Internal Error #3, Out-of-bounds event_picker{str(event_picker)}"
+                    )
                     sys.exit(1)  # you have a bug
 
                 print()
@@ -265,7 +267,9 @@ def main() -> None:
                     print("YOUR MINK AND BEAVER WERE DAMAGED ON YOUR TRIP.")
                     print("YOU RECEIVE ONLY HALF THE CURRENT PRICE FOR THESE FURS.")
                 else:
-                    print(f"Internal Error #4, Out-of-bounds event_picker{str(event_picker)}")
+                    print(
+                        f"Internal Error #4, Out-of-bounds event_picker{str(event_picker)}"
+                    )
                     sys.exit(1)  # you have a bug
 
                 print()

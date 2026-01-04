@@ -169,9 +169,7 @@ class Capsule:
             self.altitude
             - self.g * delta_t**2 / 2
             - self.velocity * delta_t
-            + self.z
-            * delta_t
-            * (q / 2 + q**2 / 6 + q**3 / 12 + q**4 / 20 + q**5 / 30)
+            + self.z * delta_t * (q / 2 + q**2 / 6 + q**3 / 12 + q**4 / 20 + q**5 / 30)
         )
 
         return PhysicalState(altitude=new_altitude, velocity=new_velocity)

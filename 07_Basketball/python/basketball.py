@@ -128,9 +128,7 @@ class Basketball:
                     self.opponent_ball()
                 elif random.random() > 0.5:
                     print(
-                        "Shot is blocked. Ball controlled by "
-                        + self.opponent
-                        + ".\n"
+                        "Shot is blocked. Ball controlled by " + self.opponent + ".\n"
                     )
                     self.opponent_ball()
                 else:

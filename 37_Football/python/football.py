@@ -6,6 +6,7 @@ A game.
 Ported to Python by Martin Thoma in 2022.
 The JavaScript version by Oscar Toledo G. (nanochess) was used
 """
+
 # NOTE: The newlines might be wrong
 
 import json

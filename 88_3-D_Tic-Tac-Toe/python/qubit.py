@@ -252,7 +252,9 @@ class TicTacToe3D:
         for j in range(4):
             m = self.lines[i][j]
             if self.board[m] == 1:
-                return (Move.YOU_FOX, m) if self.lineValues[i] < 40 else (Move.GET_OUT, m)
+                return (
+                    (Move.YOU_FOX, m) if self.lineValues[i] < 40 else (Move.GET_OUT, m)
+                )
         return (Move.CONCEDES, -1)
 
     # choose move in corners or center boxes of square 4x4
@@ -365,7 +367,9 @@ class Qubit:
                     self.show_win(board, m[2])  # type: ignore
                     break
                 elif m[0] == Move.MACHINE_WIN:
-                    print(f"Machine moves to {self.move_code(board, m[1])}, and wins as follows")
+                    print(
+                        f"Machine moves to {self.move_code(board, m[1])}, and wins as follows"
+                    )
                     self.show_win(board, m[2])  # type: ignore
                     break
                 elif m[0] == Move.DRAW:

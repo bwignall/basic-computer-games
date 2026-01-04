@@ -114,7 +114,6 @@ by Steve North, who modified an existing golf game by an unknown author
 Ported in 2022 to Python by Martin Thoma
 '''
 
-
 import enum
 import math
 import random

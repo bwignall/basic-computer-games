@@ -294,9 +294,7 @@ def calculate_shots(board: BoardType) -> int:
             if square is not None and square >= 0 and square < len(SHIPS):
                 ships_found[square] = 1
     return sum(
-        SHIPS[ship][2]
-        for ship in range(len(ships_found))
-        if ships_found[ship] == 1
+        SHIPS[ship][2] for ship in range(len(ships_found)) if ships_found[ship] == 1
     )
 
 

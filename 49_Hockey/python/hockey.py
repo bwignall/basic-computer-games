@@ -451,7 +451,9 @@ def handle_miss(
             print(team_a.players[5] + " WHACKS THE LOOSE PUCK INTO THE STANDS\n")
             return ("break", remaining_time)
         if saving_player == 4:
-            print(f"STICK SAVE BY {team_a.players[5]}" + " AND HE CLEARS IT OUT HIMSELF\n")
+            print(
+                f"STICK SAVE BY {team_a.players[5]}" + " AND HE CLEARS IT OUT HIMSELF\n"
+            )
             remaining_time -= 1
             return ("continue", remaining_time)
         if saving_player == 5:

@@ -1,19 +1,37 @@
-'''
+"""
 LIFE FOR TWO
 
 Competitive Game of Life (two or more players).
 
 Ported by Sajid Sarker (2022).
-'''
+"""
 
 # Global Variable Initialisation
 # Initialise the board
 gn = [[0 for _ in range(6)] for _ in range(6)]
 gx = [0 for _ in range(3)]
 gy = [0 for _ in range(3)]
-gk = [0, 3, 102, 103, 120, 130, 121,
-      112, 111, 12, 21, 30, 1020, 1030,
-      1011, 1021, 1003, 1002, 1012]
+gk = [
+    0,
+    3,
+    102,
+    103,
+    120,
+    130,
+    121,
+    112,
+    111,
+    12,
+    21,
+    30,
+    1020,
+    1030,
+    1011,
+    1021,
+    1003,
+    1002,
+    1012,
+]
 ga = [0, -1, 0, 1, 0, 0, -1, 0, 1, -1, -1, 1, -1, -1, 1, 1, 1]
 m2 = 0
 m3 = 0
@@ -114,9 +132,7 @@ def query_player(b) -> None:
         y_ = [0] if not y_ else y_
         gx[b] = y_[0]
         gy[b] = x_[0]
-        if gx[b] in range(1, 6)\
-                and gy[b] in range(1, 6)\
-                and gn[gx[b]][gy[b]] == 0:
+        if gx[b] in range(1, 6) and gy[b] in range(1, 6) and gn[gx[b]][gy[b]] == 0:
             break
         print("ILLEGAL COORDS. RETYPE")
     if b != 1:

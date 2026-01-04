@@ -1,17 +1,19 @@
 import random
 import sys
-from typing import List, Union, Tuple
+from typing import List, Tuple, Union
 
 
 #  define some parameters for the game which should not be modified.
 def setup_game() -> Tuple[int, int, int, int]:
-    print("""
+    print(
+        """
                                   MASTERMIND
                    CREATIVE COMPUTING  MORRISTOWN, NEW JERSEY
 
 
 
-    """)
+    """
+    )
     # get user inputs for game conditions
     num_colors: int = len(COLOR_LETTERS) + 1
     while num_colors > len(COLOR_LETTERS):
@@ -77,7 +79,9 @@ def human_turn() -> None:
                     print_score()
                     return  # from human turn, triumphant
                 else:
-                    print(f"You have {guess_results[1]} blacks and {guess_results[2]} whites")
+                    print(
+                        f"You have {guess_results[1]} blacks and {guess_results[2]} whites"
+                    )
                     guesses.append(guess_results)
                     num_moves += 1
 
@@ -105,9 +109,9 @@ def computer_turn() -> None:
 
             computer_guess = possibility_to_color_code(possible_guess)
             print(f"My guess is: {computer_guess}")
-            blacks_str, whites_str = input(
-                "ENTER BLACKS, WHITES (e.g. 1,2): "
-            ).split(",")
+            blacks_str, whites_str = input("ENTER BLACKS, WHITES (e.g. 1,2): ").split(
+                ","
+            )
             blacks = int(blacks_str)
             whites = int(whites_str)
             if blacks == NUM_POSITIONS:  # Correct guess
@@ -121,9 +125,7 @@ def computer_turn() -> None:
                 if all_possibilities[i] == 0:  # already ruled out
                     continue
                 possible_answer = possibility_to_color_code(i)
-                comparison = compare_two_positions(
-                    possible_answer, computer_guess
-                )
+                comparison = compare_two_positions(possible_answer, computer_guess)
                 if (blacks != comparison[1]) or (whites != comparison[2]):
                     all_possibilities[i] = 0
 
@@ -175,7 +177,7 @@ def possibility_to_color_code(possibility: int) -> str:
     a base of #num_colors, where each color code letter represents a digit in
     that #num_colors base."""
     color_code: str = ""
-    pos: int = NUM_COLORS ** NUM_POSITIONS  # start with total possibilities
+    pos: int = NUM_COLORS**NUM_POSITIONS  # start with total possibilities
     remainder = possibility
     for _ in range(NUM_POSITIONS - 1, 0, -1):  # process all but the last digit
         pos = pos // NUM_COLORS
@@ -196,16 +198,18 @@ def compare_two_positions(guess: str, answer: str) -> List[Union[str, int]]:
     for pos in range(0, NUM_POSITIONS):
         if guess[pos] != answer[pos]:
             for pos2 in range(0, NUM_POSITIONS):
-                if guess[pos] == answer[pos2] and guess[pos2] != answer[pos2]:  # correct color but not correct place
+                if (
+                    guess[pos] == answer[pos2] and guess[pos2] != answer[pos2]
+                ):  # correct color but not correct place
                     whites = whites + 1
-                    answer = answer[:pos2] + chr(increment) + answer[pos2 + 1:]
-                    guess = guess[:pos] + chr(increment + 1) + guess[pos + 1:]
+                    answer = answer[:pos2] + chr(increment) + answer[pos2 + 1 :]
+                    guess = guess[:pos] + chr(increment + 1) + guess[pos + 1 :]
                     increment = increment + 2
         else:  # correct color and placement
             blacks = blacks + 1
             # THIS IS DEVIOUSLY CLEVER
-            guess = guess[:pos] + chr(increment + 1) + guess[pos + 1:]
-            answer = answer[:pos] + chr(increment) + answer[pos + 1:]
+            guess = guess[:pos] + chr(increment + 1) + guess[pos + 1 :]
+            answer = answer[:pos] + chr(increment) + answer[pos + 1 :]
             increment = increment + 2
     return [initial_guess, blacks, whites]
 

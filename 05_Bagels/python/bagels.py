@@ -29,7 +29,6 @@ From: BASIC Computer Games (1978)
 Python port by Jeff Jetton, 2019
 """
 
-
 import random
 from typing import List
 

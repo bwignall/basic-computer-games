@@ -131,9 +131,7 @@ def main() -> None:
     # Main loop of game
     print_intro()
     while (
-        keep_playing := parse_input(
-            "Are you thinking of an animal? ", True, root
-        )
+        keep_playing := parse_input("Are you thinking of an animal? ", True, root)
         == "y"
     ):
         keep_asking = True
@@ -170,7 +168,9 @@ def main() -> None:
                         f"for a {new_animal} the answer would be: ", False, None
                     )
 
-                    actual_node.update_node(f"{new_question}?", answer_new_question, new_animal)
+                    actual_node.update_node(
+                        f"{new_question}?", answer_new_question, new_animal
+                    )
 
                 else:
                     print("Why not try another animal?")

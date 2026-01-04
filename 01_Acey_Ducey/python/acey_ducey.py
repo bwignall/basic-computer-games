@@ -6,7 +6,6 @@ https://www.atariarchives.org/basicgames/showpage.php?page=2
 
 import random
 
-
 cards = {
     2: "2",
     3: "3",
@@ -32,7 +31,7 @@ def play_game() -> None:
         round_cards = list(cards.keys())  # gather cards from dictionary
         card_a = random.choice(round_cards)  # choose a card
         card_b = card_a  # clone the first card, so we avoid the same number for the second card
-        while (card_a == card_b):  # if the cards are the same, choose another card
+        while card_a == card_b:  # if the cards are the same, choose another card
             card_b = random.choice(round_cards)
         card_c = random.choice(round_cards)  # choose last card
         if card_a > card_b:  # swap cards if card_a is greater than card_b

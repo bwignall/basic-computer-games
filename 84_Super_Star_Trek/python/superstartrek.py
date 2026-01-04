@@ -12,7 +12,6 @@
   fixes (as noted, search `bug`) and minor cleanup.
 """
 
-
 import random
 import sys
 from dataclasses import dataclass
@@ -564,16 +563,16 @@ class Game:
             ship.docked = False
 
         world.quadrant.set_value(torpedo_x, torpedo_y, Entity.void)
-        world.galaxy_map[ship.position.quadrant.x][
-            ship.position.quadrant.y
-        ] = QuadrantData(
-            self.world.quadrant.nb_klingons,
-            self.world.quadrant.nb_bases,
-            self.world.quadrant.nb_stars,
+        world.galaxy_map[ship.position.quadrant.x][ship.position.quadrant.y] = (
+            QuadrantData(
+                self.world.quadrant.nb_klingons,
+                self.world.quadrant.nb_bases,
+                self.world.quadrant.nb_stars,
+            )
         )
-        world.charted_galaxy_map[ship.position.quadrant.x][
-            ship.position.quadrant.y
-        ] = world.galaxy_map[ship.position.quadrant.x][ship.position.quadrant.y]
+        world.charted_galaxy_map[ship.position.quadrant.x][ship.position.quadrant.y] = (
+            world.galaxy_map[ship.position.quadrant.x][ship.position.quadrant.y]
+        )
         self.klingons_fire()
 
     def short_range_scan(self) -> None:

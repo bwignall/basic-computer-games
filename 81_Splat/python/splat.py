@@ -22,6 +22,7 @@ Universities.
 Ported in 2021 by Jonas Nockert / @lemonad
 
 """
+
 from math import sqrt
 from random import choice, random, uniform
 from typing import List, Tuple

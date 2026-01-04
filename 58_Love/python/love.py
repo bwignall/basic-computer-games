@@ -18,7 +18,6 @@ From: BASIC Computer Games (1978)
 Python port by Jeff Jetton, 2019
 """
 
-
 # Image data. Each top-level element is a row. Each row element
 # contains alternating character and blank run lengths.
 DATA = [

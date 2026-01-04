@@ -66,7 +66,9 @@ def attack_first() -> None:
             print(f"YOU LOST {str(num_units)} MEN FROM YOUR ARMY.")
             usr_army = usr_army - num_units
         elif num_units < (2 * usr_army / 3):
-            print(f"YOU LOST {int(num_units / 3)} MEN, BUT I LOST {int(2 * cpu_army / 3)}")
+            print(
+                f"YOU LOST {int(num_units / 3)} MEN, BUT I LOST {int(2 * cpu_army / 3)}"
+            )
             usr_army = int(usr_army - (num_units / 3))
             cpu_army = 0
         else:
